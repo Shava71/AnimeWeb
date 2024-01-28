@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cinema</title>
+    <link rel="stylesheet" href="/styles/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <button id="fold"><img src="/styles/menu.png" alt="" class="menu-image"></button>
+    <div class="sidenav">
+        
+        
+        <a href="#about">About
+        </a><a href="#services">Services
+        </a><a href="#clients">Clients
+        </a><a href="#contact">Contact</a>
+        <button class="dropdown-btn">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <a href="#contact">Search</a>
+        <div class="theme-menu">
+            <button class="image-button city-fone" onclick="changeBackground('./styles/city-fone.jpeg');"></button>
+            <button class="image-button streat-fone" onclick="changeBackground('./styles/streat-fone.jpg');"></button>
+            <button class="image-button samurai-fone" onclick="changeBackground('./styles/samurai-fone.jpg');"></button>
+        </div>
+    </div>
+
+    <div id="login">
+        <h1>login</h1>
+
+        <div class="input-field">
+            <input type="text" placeholder="username/email" required name="username-l"><i class='bx bx-user'></i>
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="password" required name="password-l"><i class='bx bx-lock-alt'></i>
+        </div>
+        <div class="information">
+            <label for=""><input type="checkbox" name="remember">remember me</label>
+            <a href="">Forgot password?</a> 
+        </div>
+        <div class="login-confirm">
+            <input type="button" value="login" name="login">
+        </div>
+        <span>or</span>
+        <div class="go-register">
+            <input type="button" class="register-form" value="Sing-up" id="goReg">
+        </div>
+    </div>
+
+    <form id="register">
+        <h1>register</h1>
+
+        <div class="input-field">
+            <input type="text" placeholder="username/email" required name="username-l"><i class='bx bx-user'></i>
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="password" required name="password-l"><i class='bx bx-lock-alt'></i>
+        </div>
+
+        <div class="register-confirm">
+            <input type="button" value="register" name="register">
+        </div>
+        <span>or</span>
+        <div class="go-login">
+            <input type="button" class="login-form" value="Sing-in" id="goLog">
+        </div>
+    </form>
+
+    <script src="/script/login.js"></script>
+</body>
+</html>
