@@ -8,9 +8,17 @@ body{
     color: white;
     font-family: cursive;
 }
+
+#fold{
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
 .menu-image{
-    width: 25px;
-    height: 25px;
+    background: none;
+    width: 30px;
+    height: 30px;
     
 }
 /* Login form */
@@ -162,7 +170,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 50px;
     position: fixed;
     }
     
