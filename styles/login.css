@@ -9,18 +9,52 @@ body{
     font-family: cursive;
 }
 
-#fold{
+/* Logo */
+.Logo {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    width: 160px;
+    height: 30px;
+    margin-left: 60px;
+    margin-top: 5px;
+    padding: 7px;
+    border-radius: 15px;
+    top: 0; /* Добавлено значение top */
+    cursor: pointer;
+}
+
+/* Icon sidenav - sidenav.closed */
+#fold {
+    background-color: transparent;
+    z-index: 2;
+    position: fixed;
+    /* background-image: url(menu.png); */
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    top: 0;
+    margin-left: 12px;
     margin-top: 5px;
     padding: 5px;
     border-radius: 15px;
+    display: flex;
+    cursor: pointer;
+    .menu-image{
+        background: none;
+        width: 30px;
+        height: 30px;
+        margin-top: 1px;
+    }
 }
 
-.menu-image{
-    background: none;
-    width: 30px;
-    height: 30px;
+#fold:hover {
+    background-color: rgba(0, 0, 0, 0.25); /* Затемнение при наведении */
     
 }
+
 /* Login form */
 #login, #register {
     background: transparent;
@@ -82,8 +116,10 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     margin-bottom: 10px;
     color: black;
     cursor: pointer;
+    font-size: 25px;
 }
 .go-register input{
+    margin-top: 15px;
     width: 325px;
     height: 37px;
     border-radius: 25px;
@@ -91,6 +127,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     background: lightcyan ;
     border: 2px solid rgba(255, 255, 255, .2);
     cursor: pointer;
+    font-size: 25px;
 }
 
 /* Register form */
@@ -144,8 +181,10 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     margin-bottom: 10px;
     color: black;
     cursor: pointer;
+    font-size: 25px;
 }
 .go-login input{
+    margin-top: 15px;
     width: 325px;
     height: 37px;
     border-radius: 25px;
@@ -153,6 +192,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     background: lightcyan ;
     border: 2px solid rgba(255, 255, 255, .2);
     cursor: pointer;
+    font-size: 25px;
 }
 
 
@@ -172,19 +212,11 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     overflow-x: hidden;
     padding-top: 50px;
     position: fixed;
+    transition: width 0.5s ease-in-out, padding-left 0.5s ease-in-out;
     }
     
-    #fold{
-    background-color: transparent;
-    z-index: 2;
-    position: absolute;
-    /* background-image: url(menu.png); */
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(20px);
-    top:0;
-    margin-left: 12px;
-    color: white;
-    }
+    
+    
 
     .sidenav-closed {
         width: 0;
@@ -197,7 +229,7 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
-    color: #818181;
+    color: white;
     display: block;
     border: none;
     background: none;
@@ -235,23 +267,24 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
     /* Optional: Style the caret down icon */
     .fa-caret-down {
     float: right;
-    padding-right: 8px;
+    padding-right: 29px;
     }
     .theme-menu{
-        position: absolute;
+        position: fixed;
+        
         bottom: 0;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
         justify-content: space-between;
 
     }
     .theme-menu button{
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         border: 2px solid rgba(255, 255, 255, .2);
         
         backdrop-filter: blur(20px);
         cursor: pointer;
-        border-radius: 25px;
+        border-radius: 15px;
         
     }
     .city-fone{
