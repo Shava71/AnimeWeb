@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cinema</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <header>
+        <div id="AnimeWeb">  <!--тутова должен быть наш логотип, но у нас нет ни ручек, ни дизайнера :(   -->
+            <button id="fold"><img src="/styles/menu.png" alt="" class="menu-image"></button>
+            <div class="Logo">
+                <a href="/main.html">Никита не нарисовал лого</a>
+            </div>
+            <div class="login-buttons">
+                <a href="/login.html" class="login-button">Войти</a>
+                <button class="register-button">Зарегистрироваться</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="sidenav">   
+        <a href="/main.html"><img src="/styles/sidenav/home-icon.png" alt="" class="home-image">Главная 
+        </a><a href="#services">Services
+        </a><a href="#clients">Clients
+        </a><a href="#contact">Contact</a>
+        <button class="dropdown-btn">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <a href="#contact">Search</a>
+        <div class="theme-menu">
+            <button class="image-button city-fone" onclick="changeBackground('./styles/city-fone.jpeg');"></button>
+            <button class="image-button streat-fone" onclick="changeBackground('./styles/streat-fone.jpg');"></button>
+            <button class="image-button samurai-fone" onclick="changeBackground('./styles/samurai-fone.jpg');"></button>
+        </div>
+    </div>
+
+    
+
+    <script src="/script/main.js"></script>
+</body>
+</html>

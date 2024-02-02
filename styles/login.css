@@ -9,11 +9,21 @@ body{
     font-family: cursive;
 }
 
+header{
+    height: 60px;
+    /* justify-content: space-between; */
+    background: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+}
+
 /* Logo */
 .Logo {
-    display: flex;
-    position: fixed;
-    z-index: 2;
+    /* display: flex; */
+    /* position: fixed; */
+    /* z-index: 2; */
+    /* position:relative;
+    vertical-align:center;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
@@ -24,7 +34,10 @@ body{
     padding: 7px;
     border-radius: 15px;
     top: 0; /* Добавлено значение top */
-    cursor: pointer;
+    cursor: pointer;  
+    width: 160px;
+    height: 30px;
+    margin-left: 60px;
 }
 
 /* Icon sidenav - sidenav.closed */
@@ -36,7 +49,7 @@ body{
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     top: 0;
-    margin-left: 12px;
+    margin-left: 10px;
     margin-top: 5px;
     padding: 5px;
     border-radius: 15px;
@@ -200,26 +213,33 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
 
 /* Fixed sidenav, full height */
 .sidenav {
+    margin-top: 62px;
     height: 100%;
-    width: 250px;
-    position: fixed;
+    width: 155px;
     z-index: 1;
     top: 0;
     left: 0;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
+    border-top: 0px;
+    border-left: 0px;
     backdrop-filter: blur(20px);
     overflow-x: hidden;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     position: fixed;
     transition: width 0.5s ease-in-out, padding-left 0.5s ease-in-out;
     }
     
-    
+.home-image{
+    height: 30px;
+    width: 30px;
+    position:relative;
+    vertical-align:bottom;
+}
     
 
     .sidenav-closed {
-        width: 0;
+        width: 60px;
         padding-left: 0;
         overflow: hidden;
         transition: width 0.5s ease-in-out, padding-left 0.5s ease-in-out;
@@ -273,7 +293,8 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
         position: fixed;
         
         bottom: 0;
-        margin-bottom: 60px;
+        margin-bottom: 70px;
+        margin-left: 10px;
         justify-content: space-between;
 
     }

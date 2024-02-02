@@ -1,0 +1,215 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    background: url("samurai-fone.jpg") no-repeat center center fixed;
+    color: white;
+    font-family: cursive;
+}
+
+header{
+    height: 60px;
+    /* justify-content: space-between; */
+    background: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+}
+
+#AnimeWeb {
+    display: flex;
+    align-items: center;
+}
+
+
+.Logo a{
+    /* display: flex; */
+    /* position: fixed; */
+    /* z-index: 2; */
+    /* position:relative;
+    vertical-align:center;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    width: 160px;
+    height: 30px;
+    margin-left: 60px;
+    margin-top: 5px;
+    padding: 7px;
+    border-radius: 15px;
+    top: 0; /* Добавлено значение top */
+    cursor: pointer;  
+    width: 160px;
+    height: 30px;
+    margin-left: 60px;
+}
+
+/* Icon sidenav - sidenav.closed */
+#fold {
+    background-color: transparent;
+    z-index: 2;
+    position: fixed;
+    /* background-image: url(menu.png); */
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    top: 0;
+    margin-left: 10px;
+    margin-top: 7px;
+    padding: 5px;
+    border-radius: 15px;
+    display: flex;
+    cursor: pointer;
+    .menu-image{
+        background: none;
+        width: 30px;
+        height: 30px;
+        margin-top: 1px;
+    }
+}
+
+#fold:hover {
+    background-color: rgba(0, 0, 0, 0.25); /* Затемнение при наведении */
+    
+}
+
+.login-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.login-button,
+.register-button {
+    margin-left: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.register-button {
+    background-color: #008CBA;
+    color: white;
+}
+
+
+
+
+/* Fixed sidenav, full height */
+.sidenav {
+    margin-top: 62px;
+    height: 100%;
+    width: 155px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-top: 0px;
+    border-left: 0px;
+    backdrop-filter: blur(20px);
+    overflow-x: hidden;
+    /* padding-top: 50px; */
+    position: fixed;
+    transition: width 0.5s ease-in-out, padding-left 0.5s ease-in-out;
+    }
+    
+.home-image{
+    height: 30px;
+    width: 30px;
+    position:relative;
+    vertical-align:bottom;
+}
+    
+
+    .sidenav-closed {
+        width: 60px;
+        padding-left: 0;
+        overflow: hidden;
+        transition: width 0.5s ease-in-out, padding-left 0.5s ease-in-out;
+      }
+    /* Style the sidenav links and the dropdown button */
+    .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    }
+    
+    /* On mouse-over */
+    .sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+    }
+    
+    /* Main content */
+    .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    }
+    
+    /* Add an active class to the active dropdown button */
+    .active {
+    background-color: green;
+    color: white;
+    }
+    
+    /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+    .dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+    }
+    
+    /* Optional: Style the caret down icon */
+    .fa-caret-down {
+    float: right;
+    padding-right: 29px;
+    }
+    .theme-menu{
+        position: fixed;
+        
+        bottom: 0;
+        margin-bottom: 70px;
+        margin-left: 10px;
+        justify-content: space-between;
+
+    }
+    .theme-menu button{
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(255, 255, 255, .2);
+        
+        backdrop-filter: blur(20px);
+        cursor: pointer;
+        border-radius: 15px;
+        
+    }
+    .city-fone{
+        background-image: url("city-fone.jpeg");
+        background-size: cover;
+    }
+    .streat-fone{
+        background-image: url("streat-fone.jpg");
+        background-size: cover;
+    }
+    .samurai-fone{
+        background-image: url("samurai-fone.jpg");
+        background-size: cover;
+    }

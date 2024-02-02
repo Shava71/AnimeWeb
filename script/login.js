@@ -1,3 +1,4 @@
+//Function for move to login form or to register form
 let btnGoReg = document.getElementById("goReg");
         let btnGoLog = document.getElementById("goLog");
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cinema</title>
+    <link rel="stylesheet" href="/styles/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <header>
+        <div id="AnimeWeb">  <!--тутова должен быть наш логотип, но у нас нет ни ручек, ни дизайнера :(   -->
+            <button id="fold"><img src="/styles/menu.png" alt="" class="menu-image"></button>
+            <div class="Logo">
+                <a href="/main.html">Никита не нарисовал лого</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="sidenav">   
+        <a href="/main.html"><img src="/styles/sidenav/home-icon.png" alt="" class="home-image">Главная 
+        </a><a href="#services">Services
+        </a><a href="#clients">Clients
+        </a><a href="#contact">Contact</a>
+        <button class="dropdown-btn">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+        <a href="#contact">Search</a>
+        <div class="theme-menu">
+            <button class="image-button city-fone" onclick="changeBackground('./styles/city-fone.jpeg');"></button>
+            <button class="image-button streat-fone" onclick="changeBackground('./styles/streat-fone.jpg');"></button>
+            <button class="image-button samurai-fone" onclick="changeBackground('./styles/samurai-fone.jpg');"></button>
+        </div>
+    </div>
+
+    <div id="login">
+        <h1>Вход</h1>
+
+        <div class="input-field">
+            <input type="text" placeholder="Логин/почта" required name="username-l"><i class='bx bx-user'></i>
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="Пароль" required name="password-l"><i class='bx bx-lock-alt'></i>
+        </div>
+        <div class="information">
+            <label for=""><input type="checkbox" name="remember">Запомнить меня</label>
+            <a href="">Забыли пароль?</a> 
+        </div>
+        <div class="login-confirm">
+            <input type="button" value="Войти" name="login">
+        </div>
+        <span>или</span>
+        <div class="go-register">
+            <input type="button" class="register-form" value="Регистрация" id="goReg">
+        </div>
+    </div>
+
+    <form id="register">
+        <h1>Регистрация</h1>
+
+        <div class="input-field">
+            <input type="text" placeholder="Логин/почта" required name="username-l"><i class='bx bx-user'></i>
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="Пароль" required name="password-l"><i class='bx bx-lock-alt'></i>
+        </div>
+
+        <div class="register-confirm">
+            <input type="button" value="Зарегестрироваться" name="register">
+        </div>
+        <span>или</span>
+        <div class="go-login">
+            <input type="button" class="login-form" value="Войти" id="goLog">
+        </div>
+    </form>
+
+    <script src="/script/login.js"></script>
+</body>
+</html>
