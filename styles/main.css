@@ -104,11 +104,17 @@ header{
 
 
 
+
+
+
+
+
+
 /* Fixed sidenav, full height */
 .sidenav {
     margin-top: 62px;
     height: 100%;
-    width: 155px;
+    width: 165px;
     z-index: 1;
     top: 0;
     left: 0;
@@ -123,14 +129,15 @@ header{
     transition: width 0.5s ease-in-out, padding-left 0.5s ease-in-out;
     }
     
-.home-image{
+.home-image, .anime-image, .catalog-image, .announcement-image, .top100-image, .shuffle-image, .community-image{
     height: 30px;
     width: 30px;
     position:relative;
-    vertical-align:bottom;
+    vertical-align:middle;
 }
 
-.home-text{
+
+.home-text, .anime-text, .catalog-text, .announcement-text, .top100-text, .shuffle-text, .community-text{
     position:relative;
     vertical-align: middle;
 }
@@ -140,12 +147,24 @@ header{
         padding-left: 0;
         overflow: hidden;
         transition: width 0.5s ease-in-out, padding-left 0.5s ease-in-out;
+       
       }
-      .sidenav-closed .home-image {
-        display: block; /* Отображать иконку при свернутом sidenav */
-    }
-    .sidenav-closed .home-text {
-        display: none;
+      
+    .sidenav-closed .home-text, 
+    .sidenav-closed .anime-text, 
+    .sidenav-closed .catalog-text, 
+    .sidenav-closed .announcement-text, 
+    .sidenav-closed .top100-text, 
+    .sidenav-closed .shuffle-text, 
+    .sidenav-closed .community-text, 
+    .sidenav-closed .community-text {
+        /* display: none; */
+       
+        position: flex;
+        font-size: 50%;
+        margin-left: -44px;
+        text-align: center;
+        margin-top: 30px;
     }
 
     /* Style the sidenav links and the dropdown button */
@@ -178,15 +197,15 @@ header{
     
     /* Add an active class to the active dropdown button */
     .active {
-    background-color: green;
+    background-color: rgba(0, 0, 0, 0.25);
     color: white;
     }
     
     /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
     .dropdown-container {
     display: none;
-    background-color: #262626;
-    padding-left: 8px;
+    background-color: rgba(0, 0, 0, 0.23);
+    /* padding-left: 8px; */
     }
     
     /* Optional: Style the caret down icon */
@@ -196,10 +215,9 @@ header{
     }
     .theme-menu{
         position: fixed;
-        
         bottom: 0;
         margin-bottom: 70px;
-        margin-left: 10px;
+        margin-left: 7px;
         justify-content: space-between;
 
     }
