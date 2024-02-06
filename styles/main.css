@@ -10,8 +10,11 @@ body{
 }
 
 header{
+    position: fixed;
+    top: 0;
+    width: 100%;
     height: 60px;
-    /* justify-content: space-between; */
+    z-index: 1000;
     background: transparent;
     border-bottom: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
@@ -105,8 +108,58 @@ header{
 
 
 
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 90px;
+  
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slides {
+    display: flex;
+    /* Ширина .slide умножена на количество видимых слайдов (5 в данном случае) */
+    width: calc(20% * 5);
+    margin-left: 10px;
+  }
+  
+  .slide {
+    height: 350px;
+  width: 250px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    color: white;
+  }
+  
+  .controls {
+    position: flex;
+    padding-top: 490px;
+  }
+  
+  button {
+    cursor: pointer;
+  }
 
-
+  
 
 
 

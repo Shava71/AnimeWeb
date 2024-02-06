@@ -26,5 +26,53 @@ function changeBackground(image){
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const slidesContainer = document.querySelector(".slides");
+  const slides = document.querySelectorAll(".slide");
+  const totalSlides = slides.length;
+  const visibleSlides = 4; // Количество видимых слайдов
 
+  let currentIndex = 0;
+
+  function updateSlider() {
+    const firstVisibleIndex = currentIndex;
+    const lastVisibleIndex = (currentIndex + visibleSlides - 1) % totalSlides;
+
+    slides.forEach((slide, index) => {
+      if (index >= firstVisibleIndex && index <= lastVisibleIndex) {
+        slide.style.display = "block";
+      } else {
+        slide.style.display = "none";
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  }
+
+  // Добавим кнопки для переключения
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+
+  prevBtn.addEventListener("click", prevSlide);
+  nextBtn.addEventListener("click", nextSlide);
+
+  // Инициализация слайдера
+  updateSlider();
+
+  // Add event listener to handle continuous loop
+  slidesContainer.addEventListener("transitionend", function() {
+    if (currentIndex === totalSlides) {
+      currentIndex = 0;
+      updateSlider();
+    }
+  });
+});
 
