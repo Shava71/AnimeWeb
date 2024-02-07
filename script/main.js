@@ -24,55 +24,96 @@ function changeBackground(image){
     document.body.style.backgroundImage = "url("+image+")";
 }
 
+//Slider
+const initSlider = ()=> {
+  const imageList = document.querySelector(".slider-wrapper .image-list");
+  const slideButton = document.querySelectorAll(".slider-wrapper .slide-button");
+  const sliderScrollbar = document.querySelector(".container .slider-scrollbar");
+  const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
+  scrollbarThumb.addEventListener("mousedown", (e) => {
+      const startX = e.clientX;
+      const thumbPosition = scrollbarThumb.offsetLeft;
 
-document.addEventListener("DOMContentLoaded", function() {
-  const slidesContainer = document.querySelector(".slides");
-  const slides = document.querySelectorAll(".slide");
-  const totalSlides = slides.length;
-  const visibleSlides = 4; // Количество видимых слайдов
+      // Update thumb position by mouse move
+      const handleMouseMove = (e) => {
+        const deltaX = e.clientX - startX;
+        const newThumbPosition = thumbPosition + deltaX;
+        const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
 
-  let currentIndex = 0;
+        const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+        const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
 
-  function updateSlider() {
-    const firstVisibleIndex = currentIndex;
-    const lastVisibleIndex = (currentIndex + visibleSlides - 1) % totalSlides;
-
-    slides.forEach((slide, index) => {
-      if (index >= firstVisibleIndex && index <= lastVisibleIndex) {
-        slide.style.display = "block";
-      } else {
-        slide.style.display = "none";
+        scrollbarThumb.style.left = `${boundedPosition}px`;
+        imageList.scrollLeft = scrollPosition;
       }
-    });
-  }
 
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateSlider();
-  }
+      //Remove event listener on mouse up
+      const handleMouseUp = () => {
+        document.removeEventListener("mousemove", handleMouseMove);
+        document.removeEventListener("mouseup", handleMouseUp);
+      }
 
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateSlider();
-  }
-
-  // Добавим кнопки для переключения
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-
-  prevBtn.addEventListener("click", prevSlide);
-  nextBtn.addEventListener("click", nextSlide);
-
-  // Инициализация слайдера
-  updateSlider();
-
-  // Add event listener to handle continuous loop
-  slidesContainer.addEventListener("transitionend", function() {
-    if (currentIndex === totalSlides) {
-      currentIndex = 0;
-      updateSlider();
-    }
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
   });
+
+  slideButton.forEach(button =>{
+    button.addEventListener("click", () => {
+      const direction = button.id === "prev-slide" ? -1 : 1;
+      const scrollAmount = imageList.clientWidth * direction;
+      imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+  })
+
+  const handleSlideButton = () => {
+    slideButton[0].style.display = imageList.scrollLeft <= 0? "none": "block";
+    slideButton[1].style.display = imageList.scrollLeft >= maxScrollLeft? "none": "block";
+  }
+
+  const updateScrollThumbPosition = () => {
+    const scrollPosition = imageList.scrollLeft;
+    const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+    scrollbarThumb.style.left = `${thumbPosition}px`; 
+  }
+
+  imageList.addEventListener("scroll", () =>{
+    handleSlideButton();
+    updateScrollThumbPosition();
+  });
+
+}
+window.addEventListener("load", initSlider);
+
+
+// Добавьте переменную, чтобы хранить текущий индекс слайда
+let currentSlideIndex = 0;
+
+// Функция для автоматического листания слайдов
+const autoSlide = () => {
+  const imageList = document.querySelector(".slider-wrapper .image-list");
+
+  // Увеличиваем индекс слайда (или сбрасываем, если достигнут конец)
+  currentSlideIndex = (currentSlideIndex + 1) % imageList.children.length;
+
+  // Прокручиваем к следующему слайду
+  imageList.scrollTo({
+    left: currentSlideIndex * imageList.clientWidth,
+    behavior: "smooth"
+  });
+};
+
+// Устанавливаем интервал на 10 секунд
+const slideInterval = setInterval(autoSlide, 15000);
+
+// Останавливаем интервал при наведении курсора на слайдер
+const sliderWrapper = document.querySelector(".slider-wrapper");
+sliderWrapper.addEventListener("mouseenter", () => {
+  clearInterval(slideInterval);
 });
 
+// Запускаем интервал после выхода курсора из слайдера
+sliderWrapper.addEventListener("mouseleave", () => {
+  slideInterval = setInterval(autoSlide, 15000);
+});

@@ -7,6 +7,12 @@ body{
     background: url("samurai-fone.jpg") no-repeat center center fixed;
     color: white;
     font-family: cursive;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header{
@@ -106,60 +112,125 @@ header{
 
 
 
+.container{
+    max-width: 1200px;
+    width: 95%;
+    padding-top: 80px;
+}
 
+.image-info h3,
+.image-info p,
+.image-info hr.separator {
+    color: white; /* Задайте цвет текста, который вы хотите использовать */
+}
 
-.slider-container {
+.container h1{
+    text-align: center;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    /* width: 50%; */
+}
+
+.slider-wrapper{
+    position: relative;
+}
+
+.slider-wrapper .slide-button{
+    position: absolute;
+    top: 50%; 
+    height: 75px;
+    width: 50px;
+    color: #fff;
+    background: #000;
+    border-radius: 15px;
+    font-size: 2.2rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transform: translateY(-50%);
+}
+
+.slider-wrapper .slide-button:hover{
+    background: #444;
+}
+
+.slider-wrapper .slide-button#prev-slide{
+    left: -20px;
+    display: none;
+}
+.slider-wrapper .slide-button#next-slide{
+    right: -20px;
+}
+
+.slider-wrapper .image-list{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(10, 1fr);
+    /* padding-top: 30px; */
+    /* font-size: 0; */
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-bottom: 30px;
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar{
+    display: none;
+
+}
+
+.slider-wrapper .image-list .image-item{
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.container .slider-scrollbar{
+    height: 24px;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-top: 90px;
-  
-  }
-  
-  .slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slides {
-    display: flex;
-    /* Ширина .slide умножена на количество видимых слайдов (5 в данном случае) */
-    width: calc(20% * 5);
-    margin-left: 10px;
-  }
-  
-  .slide {
-    height: 350px;
-  width: 250px;
-    box-sizing: border-box;
-    position: relative;
-  }
-  
-  img {
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+}
+.slider-scrollbar .scrollbar-track{
+    height: 2px;
     width: 100%;
-    height: auto;
-  }
-  
-  .caption {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    position: relative;
+}
+.slider-scrollbar:hover .scrollbar-track{
+    height: 4px;
+}
+
+.slider-scrollbar .scrollbar-thumb{
     position: absolute;
-    bottom: 0;
+    height: 100%;
+    width: 50%;
+    background: rgba(255, 255, 255, .2);;
+    border-radius: inherit;
+    cursor: grab;
+}
+.slider-scrollbar .scrollbar-thumb:active{
+    cursor: grabbing;
+    height: 8px;
+    top:-2px;
+    
+}
+.slider-scrollbar .scrollbar-thumb::after{
+    content: "";
+    position: absolute;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    color: white;
-  }
-  
-  .controls {
-    position: flex;
-    padding-top: 490px;
-  }
-  
-  button {
-    cursor: pointer;
-  }
+    top:-10px;
+    bottom: -10px    ;
+}
 
-  
+
 
 
 
